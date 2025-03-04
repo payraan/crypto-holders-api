@@ -3,11 +3,14 @@ import requests
 import os
 import uvicorn
 from typing import Optional
+from dotenv import load_dotenv
 
+# بارگذاری متغیرهای محیطی از فایل .env
+load_dotenv()
 app = FastAPI()
 
 # تنظیم API Key از متغیر محیطی یا مستقیم
-HOLDERSCAN_API_KEY = os.getenv("HOLDERSCAN_API_KEY", "3895e3019d79363e91a10983904c49bae2c4a7ff2db12caf124f5fe68143069c")
+HOLDERSCAN_API_KEY = os.getenv("HOLDERSCAN_API_KEY", "")
 
 BASE_URL = "https://api.holderscan.com"
 HEADERS = {
